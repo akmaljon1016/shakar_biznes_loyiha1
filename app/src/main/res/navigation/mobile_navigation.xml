@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_bosh_sahifa">
+
+    <fragment
+        android:id="@+id/nav_bosh_sahifa"
+        android:name="com.example.shakar_biznes_loyiha.ui.bosh_sahifa.BoshSahifaFragment"
+        android:label="@string/menu_bosh_sahifa"
+        tools:layout="@layout/fragment_boshsahifa" />
+
+    <fragment
+        android:id="@+id/nav_kunlik_hisobotlar"
+        android:name="com.example.shakar_biznes_loyiha.ui.kunlik_hisobotlar.KunlikHisobotlarFragment"
+        android:label="@string/menu_kunlik_hisobotlar"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_klientlar"
+        android:name="com.example.shakar_biznes_loyiha.ui.klientlar.KlientlarFragment"
+        android:label="@string/menu_klientlar"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_kassa"
+        android:name="com.example.shakar_biznes_loyiha.ui.kassa.KassaFragment"
+        android:label="@string/menu_kassa"
+        tools:layout="@layout/kassa_fragment" />
+    <fragment
+        android:id="@+id/nav_sklad"
+        android:name="com.example.shakar_biznes_loyiha.ui.sklad.SkladFragment"
+        android:label="@string/menu_Sklad"
+        tools:layout="@layout/sklad_fragment" />
+    <fragment
+        android:id="@+id/nav_olingan_yuklar"
+        android:name="com.example.shakar_biznes_loyiha.ui.olingan_yuklar.OlinganYuklarFragment"
+        android:label="@string/menu_olingan_yuklar"
+        tools:layout="@layout/olingan_yuklar_fragment" />
+    <fragment
+        android:id="@+id/nav_sotilgan_yuklar"
+        android:name="com.example.shakar_biznes_loyiha.ui.sotilgan_yuklar.SotilganYuklarFragment"
+        android:label="@string/menu_sotilgan_yuklar"
+        tools:layout="@layout/sotilgan_yuklar_fragment" />
+    <fragment
+        android:id="@+id/nav_dollor_kursi"
+        android:name="com.example.shakar_biznes_loyiha.ui.dollor_kursi.DollorKursiFragment"
+        android:label="@string/menu_dollor_kursi"
+        tools:layout="@layout/dollor_kursi_fragment" />
+    <fragment
+        android:id="@+id/nav_foydalanuvchilar"
+        android:name="com.example.shakar_biznes_loyiha.ui.foydalanuvchilar.FoydalanuvchilarFragment"
+        android:label="@string/menu_foydalanuvchilar"
+        tools:layout="@layout/foydalanuvchilar_fragment" />
+</navigation>

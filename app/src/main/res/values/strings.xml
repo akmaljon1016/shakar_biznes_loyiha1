@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Shakar_biznes_loyiha</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_bosh_sahifa">Bosh sahifa</string>
+    <string name="menu_kunlik_hisobotlar">Kunlik hisobotlar</string>
+    <string name="menu_klientlar">Klientlar</string>
+    <string name="menu_kassa">Kassa</string>
+    <string name="menu_Sklad">Sklad</string>
+    <string name="menu_olingan_yuklar">Olingan yuklar</string>
+    <string name="menu_sotilgan_yuklar">Sotilgan yuklar</string>
+    <string name="menu_dollor_kursi">Dollor kursi</string>
+    <string name="menu_foydalanuvchilar">Foydalanuvchilar</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

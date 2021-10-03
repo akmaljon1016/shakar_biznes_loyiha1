@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_bosh_sahifa"
+            android:icon="@drawable/ic_bosh_sahifa"
+            android:title="@string/menu_bosh_sahifa" />
+        <item
+            android:id="@+id/nav_kunlik_hisobotlar"
+            android:icon="@drawable/ic_kunlik_hisobotlar"
+            android:title="@string/menu_kunlik_hisobotlar" />
+        <item
+            android:id="@+id/nav_klientlar"
+            android:icon="@drawable/ic_klientlar"
+            android:title="@string/menu_klientlar" />
+        <item
+            android:id="@+id/nav_kassa"
+            android:icon="@drawable/ic_kassa"
+            android:title="@string/menu_kassa" />
+        <item
+            android:id="@+id/nav_sklad"
+            android:icon="@drawable/ic_sklad"
+            android:title="@string/menu_Sklad" />
+        <item
+            android:id="@+id/nav_olingan_yuklar"
+            android:icon="@drawable/ic_olingan_yuklar"
+            android:title="@string/menu_olingan_yuklar" />
+        <item
+            android:id="@+id/nav_sotilgan_yuklar"
+            android:icon="@drawable/ic_sotilgan_yuklar"
+            android:title="@string/menu_sotilgan_yuklar" />
+        <item
+            android:id="@+id/nav_dollor_kursi"
+            android:icon="@drawable/ic_dollor_kursi"
+            android:title="@string/menu_dollor_kursi" />
+        <item
+            android:icon="@drawable/ic_foydalanuvchilar"
+            android:id="@+id/nav_foydalanuvchilar"
+            android:title="@string/menu_foydalanuvchilar" />
+    </group>
+</menu>
