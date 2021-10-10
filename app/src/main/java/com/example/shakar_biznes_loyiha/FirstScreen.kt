@@ -1,9 +1,9 @@
 package com.example.shakar_biznes_loyiha
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shakar_biznes_loyiha.utils.UserPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope

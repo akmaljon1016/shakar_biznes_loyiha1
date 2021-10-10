@@ -6,12 +6,14 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="background">#262932</color>
+    <color name="white">#CFCFCF</color>
     <color name="backgroundToolbar">#484849</color>
     <color name="yellowColor">#212327</color>
     <color name="editTexColor">#7B7E83</color>
     <color name="blue">#203BCD</color>
     <color name="grey">#D1D1DD</color>
     <color name="red">#D11010</color>
+    <color name="green">#1B8E02</color>
+    <color name="card_background">#343945</color>
+    <color name="background">#262932</color>
 </resources>

@@ -96,10 +96,14 @@ dependencies {
 
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
     releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
-    
+
     //progressbar
     implementation 'com.dlazaro66.wheelindicatorview:WheelIndicatorView:1.0.0'
-        //keyboar event
+    //keyboar event
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC3'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //searcebale spinner
+    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
 
 }

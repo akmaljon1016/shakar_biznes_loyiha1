@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/background">
+
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="N" />
+        <TextView
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:text="Ismi"
+            android:textSize="20sp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:text="Yakuniy hisob"
+            android:layout_width="150dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:text="Pul oldi-berdi"
+            android:layout_width="150dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:text="Yuk oldi-berdi"
+            android:layout_width="150dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:text="Zavod"
+            android:layout_width="100dp"
+            android:layout_height="30dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

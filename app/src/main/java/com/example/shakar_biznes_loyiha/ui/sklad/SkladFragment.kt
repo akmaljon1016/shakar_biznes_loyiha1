@@ -6,27 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.example.shakar_biznes_loyiha.R
+import com.example.shakar_biznes_loyiha.Repository
+import com.example.shakar_biznes_loyiha.adapters.BaseFragment
+import com.example.shakar_biznes_loyiha.databinding.SkladFragmentBinding
 
-class SkladFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SkladFragment()
-    }
-
-    private lateinit var viewModel: SkladViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.sklad_fragment, container, false)
-    }
+class SkladFragment : BaseFragment<SkladViewModel, SkladFragmentBinding, Repository>() {
+    val spinnerArray = arrayOf("20", "50", "100", "200", "500", "1000", "barchasi")
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SkladViewModel::class.java)
-        // TODO: Use the ViewModel
+        val adapter = ArrayAdapter(requireContext(), R.layout.spinner_item, spinnerArray)
+        binding.rowNumberSpinner.adapter = adapter
     }
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): SkladFragmentBinding = SkladFragmentBinding.inflate(inflater, container, false)
+
+    override fun getViewModel(): Class<SkladViewModel> = SkladViewModel::class.java
+
+    override fun getFragmentRepository(): Repository = Repository()
 
 }

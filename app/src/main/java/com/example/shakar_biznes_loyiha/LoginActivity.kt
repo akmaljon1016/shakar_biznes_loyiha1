@@ -2,18 +2,16 @@ package com.example.shakar_biznes_loyiha
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.shakar_biznes_loyiha.databinding.ActivityLoginBinding
 import com.example.shakar_biznes_loyiha.utils.NetworkListener
 import com.example.shakar_biznes_loyiha.utils.UserPreferences
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class LoginActivity : AppCompatActivity() {
     private var isNetworkAvailable = false
@@ -42,16 +40,16 @@ class LoginActivity : AppCompatActivity() {
         }
         setContentView(binding?.root)
         lifecycleScope.launch {
-            checkNetwork()
+           // checkNetwork()
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
-    private suspend fun checkNetwork() {
-        networkListener.checkNetworkAvailability(applicationContext).collect {
-            isNetworkAvailable = it
-        }
-    }
+//    @RequiresApi(Build.VERSION_CODES.N)
+//    private suspend fun checkNetwork() {
+//        networkListener.checkNetworkAvailability(applicationContext).collect {
+//            isNetworkAvailable = it
+//        }
+//    }
 
     override fun onBackPressed() {
 

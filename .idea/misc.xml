@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/highlight_color.xml" value="0.2203125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_add.xml" value="0.19054054054054054" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_baseline_account_balance_24.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_baseline_dollor.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_baseline_file_copy_24.xml" value="0.2203125" />
@@ -18,24 +20,44 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_kassa_dollor1.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_kassa_sum.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_klientlar.xml" value="0.2203125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_man.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_outline_file_copy_24.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_umumiy.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_yuk_chiqarish.xml" value="0.19054054054054054" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/ic_yuk_olish.xml" value="0.19054054054054054" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/nav_item_drawable.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/round_shape.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/search_edittext_style.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/splash.xml" value="0.2203125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/table_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/drawable/table_style_header.xml" value="0.2203125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/app_bar_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/bosh_sahifa_items.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/bosh_sahifa_sklad_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/calendar_view.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/content_home.xml" value="0.1" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_boshsahifa.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_boshsahifa.xml" value="0.17657657657657658" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_gallery.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_home.xml" value="0.16" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_klientlar.xml" value="0.33" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_kunlik_hisobotlar.xml" value="0.18" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/kassa_fragment.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/nav_header_home.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/kassa_fragment.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/klient_recycler_item.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/nav_header_home.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/olingan_yuklar_fragment.xml" value="0.17657657657657658" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/searchview_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/sklad_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/spinner_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/layout/table_style.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu-v26/toolbar_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu/toolbar_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

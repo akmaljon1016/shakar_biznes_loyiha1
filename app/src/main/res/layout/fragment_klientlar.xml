@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".ui.sklad.SkladFragment">
+    android:background="@color/background">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -23,7 +26,6 @@
                     android:id="@+id/gridLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:columnCount="2"
                     android:useDefaultMargins="true"
                     app:layout_constraintTop_toTopOf="parent">
@@ -45,7 +47,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginStart="10dp"
-                                android:src="@drawable/ic_sklad"
+                                android:src="@drawable/ic_umumiy"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +58,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="20dp"
-                                android:text="Ostatka"
+                                android:text="Haqlarim"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -104,7 +106,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="20dp"
-                                android:text="Narxi"
+                                android:text="Qarzlarim"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -123,151 +125,54 @@
                                 app:layout_constraintTop_toBottomOf="@id/txt_narxi" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:layout_columnWeight="1"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="6dp"
-                        app:cardElevation="10dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/img_olingan_yuk"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginStart="10dp"
-                                android:src="@drawable/ic_olingan_yuklar"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/txt_olingan_yuk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="20dp"
-                                android:text="Olingan yuk"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@id/img_olingan_yuk"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:text="7290"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@id/txt_olingan_yuk"
-                                app:layout_constraintTop_toBottomOf="@id/txt_olingan_yuk" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:layout_columnWeight="1"
-                        app:cardBackgroundColor="@color/card_background"
-                        app:cardCornerRadius="6dp"
-                        app:cardElevation="10dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/img_sotilgan_yuklar"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginStart="10dp"
-                                android:src="@drawable/ic_sotilgan_yuklar"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/txt_sotilgan_yuk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="20dp"
-                                android:text="Sotilgan yuk"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@id/img_sotilgan_yuklar"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:text="7290"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@id/txt_sotilgan_yuk"
-                                app:layout_constraintTop_toBottomOf="@id/txt_sotilgan_yuk" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
                 </GridLayout>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
+                    android:layout_margin="6dp"
+                    android:padding="10dp"
                     app:cardBackgroundColor="@color/card_background"
                     app:layout_constraintTop_toBottomOf="@id/gridLayout">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
 
                         <Button
-                            android:layout_marginStart="2dp"
-                            android:id="@+id/btn_yuk_olish"
+                            android:id="@+id/btn_klient_qoshish"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/blue"
-                            android:drawableLeft="@drawable/ic_yuk_olish"
-                            android:text="Yuk olish"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:drawableLeft="@drawable/ic_add"
+                            android:text="Klien Qoshish"
+                            android:textSize="8sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
-                            android:id="@+id/btn_yuk_chiqarish"
+                            android:id="@+id/btn_klient_edit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
+                            android:layout_marginStart="2dp"
                             android:backgroundTint="@color/blue"
-                            android:drawableLeft="@drawable/ic_yuk_chiqarish"
-                            android:text="Yuk chiqarish"
-                            android:textSize="9sp"
-                            app:layout_constraintBottom_toBottomOf="@id/btn_yuk_olish"
-                            app:layout_constraintStart_toEndOf="@id/btn_yuk_olish"
-                            app:layout_constraintTop_toTopOf="@id/btn_yuk_olish" />
+                            android:drawableLeft="@drawable/ic_edit"
+                            android:text="Tahrirlash"
+                            android:textSize="8sp"
+                            app:layout_constraintStart_toEndOf="@id/btn_klient_qoshish"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <Spinner
                             android:id="@+id/row_number_spinner"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
                             android:background="@drawable/search_edittext_style"
                             android:padding="5dp"
-                            app:layout_constraintBottom_toBottomOf="@id/btn_yuk_olish"
-                            app:layout_constraintStart_toEndOf="@id/btn_yuk_chiqarish"
-                            app:layout_constraintTop_toTopOf="@id/btn_yuk_olish" />
+                            app:layout_constraintBottom_toBottomOf="@id/btn_klient_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/btn_klient_edit" />
+
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
