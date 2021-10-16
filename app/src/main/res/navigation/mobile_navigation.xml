@@ -16,7 +16,6 @@
         android:name="com.example.shakar_biznes_loyiha.ui.kunlik_hisobotlar.KunlikHisobotlarFragment"
         android:label="@string/menu_kunlik_hisobotlar"
         tools:layout="@layout/fragment_kunlik_hisobotlar" />
-
     <fragment
         android:id="@+id/nav_klientlar"
         android:name="com.example.shakar_biznes_loyiha.ui.klientlar.KlientlarFragment"
@@ -51,5 +50,22 @@
         android:id="@+id/nav_foydalanuvchilar"
         android:name="com.example.shakar_biznes_loyiha.ui.foydalanuvchilar.FoydalanuvchilarFragment"
         android:label="@string/menu_foydalanuvchilar"
-        tools:layout="@layout/foydalanuvchilar_fragment" />
+        tools:layout="@layout/foydalanuvchilar_fragment" >
+        <action
+            android:id="@+id/action_nav_foydalanuvchilar_to_xodimQoshishFragment"
+            app:destination="@id/xodimQoshishFragment" />
+        <action
+            android:id="@+id/action_nav_foydalanuvchilar_to_adminQoshishFragment"
+            app:destination="@id/adminQoshishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/xodimQoshishFragment"
+        android:name="com.example.shakar_biznes_loyiha.ui.XodimQoshish.XodimQoshishFragment"
+        android:label="Yangi xodim qo'shish"
+        tools:layout="@layout/xodim_qoshish_fragment" />
+    <fragment
+        android:id="@+id/adminQoshishFragment"
+        android:name="com.example.shakar_biznes_loyiha.AdminQoshishFragment"
+        android:label="Yangi admin qo'shish"
+        tools:layout="@layout/fragment_admin_qoshish" />
 </navigation>

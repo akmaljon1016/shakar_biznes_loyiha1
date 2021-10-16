@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.bosh_sahifa_items.view.*
 
 class BoshSahifaAdapter(val context: Context) :
     RecyclerView.Adapter<BoshSahifaAdapter.MyViewHolder>() {
-
     var list = emptyList<RecBoshSohifa>()
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,14 +33,20 @@ class BoshSahifaAdapter(val context: Context) :
             holder.itemView.order_number.setBackgroundResource(R.drawable.table_style_header)
             holder.itemView.name.setBackgroundResource(R.drawable.table_style_header)
             holder.itemView.summa.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.order_number.text = "N"
+            holder.itemView.order_number.text = "#"
             holder.itemView.name.text = "Ism"
             holder.itemView.summa.text = "Summa"
         } else {
             val singleItems = list[rowPosition - 1]
-            holder.itemView.order_number.setBackgroundResource(R.drawable.table_style_rows)
-            holder.itemView.name.setBackgroundResource(R.drawable.table_style_rows)
-            holder.itemView.summa.setBackgroundResource(R.drawable.table_style_rows)
+            if (rowPosition % 2 == 0) {
+                holder.itemView.order_number.setBackgroundResource(R.drawable.table_style_row_juft)
+                holder.itemView.name.setBackgroundResource(R.drawable.table_style_row_juft)
+                holder.itemView.summa.setBackgroundResource(R.drawable.table_style_row_juft)
+            } else {
+                holder.itemView.order_number.setBackgroundResource(R.drawable.table_style_rows_toq)
+                holder.itemView.name.setBackgroundResource(R.drawable.table_style_rows_toq)
+                holder.itemView.summa.setBackgroundResource(R.drawable.table_style_rows_toq)
+            }
             holder.itemView.order_number.text = rowPosition.toString()
             holder.itemView.name.text = singleItems.name
             holder.itemView.summa.text = singleItems.summa.toString()
@@ -52,7 +57,6 @@ class BoshSahifaAdapter(val context: Context) :
     }
 
     override fun getItemCount(): Int = list.size
-
     fun setDataList(dataList: List<RecBoshSohifa>) {
         this.list = dataList
         notifyDataSetChanged()

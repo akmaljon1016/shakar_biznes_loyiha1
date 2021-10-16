@@ -1,56 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/background">
+        android:background="@color/background"
+        android:orientation="horizontal">
 
         <TextView
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:padding="4dp"
+            android:id="@+id/txtKlientOrderNumber"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="N" />
-        <TextView
             android:padding="4dp"
+            android:text="N"
             android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtKlientIsm"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
             android:text="Ismi"
-            android:textSize="20sp"
-            android:layout_width="100dp"
-            android:layout_height="30dp"/>
-        <TextView
-            android:textSize="20sp"
-            android:padding="4dp"
             android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtKlientYakuniyXisob"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
             android:text="Yakuniy hisob"
-            android:layout_width="150dp"
-            android:layout_height="30dp"/>
-        <TextView
-            android:textSize="20sp"
-            android:padding="4dp"
             android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtKlientPulOldiBerdi"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
             android:text="Pul oldi-berdi"
-            android:layout_width="150dp"
-            android:layout_height="30dp"/>
-        <TextView
-            android:textSize="20sp"
-            android:padding="4dp"
             android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtKlientYukOldiBerdi"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
             android:text="Yuk oldi-berdi"
-            android:layout_width="150dp"
-            android:layout_height="30dp"/>
-        <TextView
-            android:textSize="20sp"
-            android:padding="4dp"
             android:textColor="@color/white"
-            android:text="Zavod"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtKlientZavod"
             android:layout_width="100dp"
-            android:layout_height="30dp"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</androidx.core.widget.NestedScrollView>
+            android:layout_height="30dp"
+            android:padding="4dp"
+            android:text="Zavod"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/actionLayout"
+            android:layout_width="120dp"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/txtKlientAction"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:padding="4dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_down"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/ic_down"
+                app:layout_constraintBottom_toBottomOf="@id/txtKlientAction"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

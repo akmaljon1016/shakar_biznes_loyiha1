@@ -16,4 +16,7 @@
     <color name="green">#1B8E02</color>
     <color name="card_background">#343945</color>
     <color name="background">#262932</color>
+    <color name="rowodd">#4F515A</color>
+    <color name="yellow">#E8B009</color>
+
 </resources>

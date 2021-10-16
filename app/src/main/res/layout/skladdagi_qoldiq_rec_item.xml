@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtSkladOrderNumber"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="6dp"
+            android:text="#"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtSkladShakarTuri"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="6dp"
+            android:text="Shakar turi"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtSladQoldiq"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="6dp"
+            android:text="Qoldiq (qop)"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtSladNarxi"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="6dp"
+            android:text="Narxi (qop)"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtSkladUmumiySumma"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="6dp"
+            android:text="Qoldiq (qop)"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

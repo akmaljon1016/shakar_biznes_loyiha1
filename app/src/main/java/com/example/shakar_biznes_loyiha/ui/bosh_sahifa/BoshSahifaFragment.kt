@@ -6,27 +6,93 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shakar_biznes_loyiha.R
+import com.example.shakar_biznes_loyiha.repository.Repository
+import com.example.shakar_biznes_loyiha.adapters.BaseFragment
 import com.example.shakar_biznes_loyiha.adapters.BoshSahifaAdapter
+import com.example.shakar_biznes_loyiha.adapters.SkladdagiQoldiqRecAdapter
 import com.example.shakar_biznes_loyiha.databinding.FragmentBoshsahifaBinding
 import com.example.shakar_biznes_loyiha.model.RecBoshSohifa
-import kotlinx.android.synthetic.main.fragment_boshsahifa.*
+import com.example.shakar_biznes_loyiha.model.RecSkladdagiQoldiq
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 
-class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
+class BoshSahifaFragment :
+    BaseFragment<BoshSahifaViewModel, FragmentBoshsahifaBinding, Repository>(),
+    AdapterView.OnItemSelectedListener,
     SearchView.OnQueryTextListener {
-    private val adapter by lazy { BoshSahifaAdapter(requireActivity()) }
-    private var _binding: FragmentBoshsahifaBinding? = null
-    val binding get() = _binding!!
-    private val boshSahifaItem = arrayListOf<RecBoshSohifa>(
-//        RecBoshSohifa("Akmaljon", 1221212121),
-//        RecBoshSohifa("Sobirjon", 1221212121),
-//        RecBoshSohifa("Azamat", 1221212121),
+    private val adapterBosh by lazy { BoshSahifaAdapter(requireActivity()) }
+    private val adapterSklad by lazy { SkladdagiQoldiqRecAdapter() }
+
+    val boshSahifaItem = arrayListOf<RecBoshSohifa>(
+        RecBoshSohifa("Akmaljon", 1221212121),
+        RecBoshSohifa("Sobirjon", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+    )
+    private val skladdagiQoldiqItem = arrayListOf<RecSkladdagiQoldiq>(
+        RecSkladdagiQoldiq("Angren", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Rossiya", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Xorazm", 282, 385, 108570),
+        RecSkladdagiQoldiq("Angren", 282, 385, 108570),
+        RecSkladdagiQoldiq("Angren", 282, 385, 108570),
+        RecSkladdagiQoldiq("Angren", 282, 385, 108570)
     )
     private val spinnner1Array = arrayOf("Barchasi", "Klient", "invesrtor", "Zavod", "firma")
     private val spinner2Array = arrayOf(
@@ -40,17 +106,10 @@ class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
     )
     private val spinner3Array = arrayOf("20", "50", "100", "200", "500", "1000", "barchasi")
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentBoshsahifaBinding.inflate(inflater)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //binding.recSkladdagiQoldiq.isNestedScrollingEnabled=false
         val adapter1 = ArrayAdapter(requireContext(), R.layout.spinner_item, spinnner1Array)
 
         val adapter2 =
@@ -82,18 +141,22 @@ class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
                     binding.nestedScrollView.smoothScrollTo(0, 470, 2000)
                 }
             })
-        adapter.setDataList(boshSahifaItem)
-        binding.recBoshSahifa.layoutManager = LinearLayoutManager(requireActivity())
-        binding.recBoshSahifa.adapter = adapter
-        binding.searchview.setOnQueryTextListener(this)
-        CoroutineScope(Dispatchers.Main).launch {
-            binding.nestedScrollView.scrollTo(0, -500)
-        }
-    }
+        adapterBosh.setDataList(boshSahifaItem)
+        //Recyclerview1
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+        //binding.recBoshSahifa.isNestedScrollingEnabled = false
+        binding.recBoshSahifa.layoutManager = LinearLayoutManager(requireActivity())
+        binding.recBoshSahifa.adapter = adapterBosh
+
+        //Recyclerview2
+        adapterSklad.setDataList(skladdagiQoldiqItem)
+        binding.recSkladdagiQoldiq.layoutManager = LinearLayoutManager(requireActivity())
+        binding.recSkladdagiQoldiq.adapter = adapterSklad
+        binding.searchview.setOnQueryTextListener(this)
+
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.nestedScrollView.scrollTo(0, -2000)
+        }
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -118,7 +181,6 @@ class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
     }
 
     private fun filter(newText: String?) {
-
         val fiteredList = arrayListOf<RecBoshSohifa>()
         for (item in boshSahifaItem) {
             if (item.name.lowercase().contains(newText!!.lowercase())) {
@@ -127,10 +189,11 @@ class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
             if (fiteredList.isEmpty()) {
                 // Toast.makeText(requireContext(), "No data found", Toast.LENGTH_SHORT).show()
             } else {
-                adapter.setDataList(fiteredList)
+                adapterBosh.setDataList(fiteredList)
             }
         }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.toolbar_menu, menu)
@@ -138,4 +201,13 @@ class BoshSahifaFragment : Fragment(), AdapterView.OnItemSelectedListener,
         val searchview = search?.actionView as? SearchView
         searchview?.isSubmitButtonEnabled = true
     }
+    //BaseFragment
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentBoshsahifaBinding = FragmentBoshsahifaBinding.inflate(inflater, container, false)
+
+    override fun getViewModel(): Class<BoshSahifaViewModel> = BoshSahifaViewModel::class.java
+
+    override fun getFragmentRepository(): Repository = Repository()
 }

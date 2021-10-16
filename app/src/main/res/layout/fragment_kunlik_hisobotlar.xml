@@ -8,6 +8,7 @@
     tools:context=".ui.kunlik_hisobotlar.KunlikHisobotlarFragment">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,7 +17,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:descendantFocusability="afterDescendants">
+            android:overScrollMode="never">
 
             <GridLayout
                 android:id="@+id/gridLayout"
@@ -238,14 +239,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:padding="6dp"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <ImageButton
-                            android:id="@+id/btn_calendar"
-                            android:layout_width="40dp"
+                        <TextView
+                            android:id="@+id/txt_calendarView"
+                            android:layout_width="160dp"
                             android:layout_height="40dp"
-                            android:background="@color/background"
-                            android:src="@drawable/ic_baseline_calendar_today_24"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/table_style_rows_toq"
+                            android:gravity="center"
+                            android:text="29.08.2021"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -256,29 +262,20 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="4dp"
                             android:background="@drawable/ic_x"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/btn_calendar"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintBottom_toBottomOf="@id/txt_calendarView"
+                            app:layout_constraintStart_toEndOf="@id/txt_calendarView"
+                            app:layout_constraintTop_toTopOf="@id/txt_calendarView" />
 
-                        <TextView
-                            android:id="@+id/txt_calendarView"
-                            android:layout_width="160dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="10dp"
-                            android:background="@drawable/table_style_rows"
-                            android:gravity="center"
-                            android:text="29.08.2021"
-                            android:textColor="@color/white"
-                            android:textSize="12sp"
-                            app:layout_constraintStart_toEndOf="@id/btn_default"
-                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_height="500dp"
+                        android:layout_marginTop="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintTop_toBottomOf="@id/calendar_layout"
+                        tools:layout_editor_absoluteX="0dp"
                         tools:listitem="@layout/bosh_sahifa_items" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

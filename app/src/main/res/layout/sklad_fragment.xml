@@ -222,6 +222,7 @@
                 </GridLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/firstCardviewiew"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -268,8 +269,27 @@
                             app:layout_constraintBottom_toBottomOf="@id/btn_yuk_olish"
                             app:layout_constraintStart_toEndOf="@id/btn_yuk_chiqarish"
                             app:layout_constraintTop_toTopOf="@id/btn_yuk_olish" />
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:layout_constraintTop_toBottomOf="@id/firstCardviewiew">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/sklad_rec_item" />
+                    </HorizontalScrollView>
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

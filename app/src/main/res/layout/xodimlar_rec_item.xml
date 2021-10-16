@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/xodimOrderNumber"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="#"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xodimLogin"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xodimIsm"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="Ism"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xodimFamiliya"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="Familiya"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xodimStatus"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="Status"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xodimYaratildi"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@color/background"
+            android:paddingStart="2dp"
+            android:text="Yaratildi"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/actionLayout"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/actionTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingStart="2dp"
+                android:text="Action"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imgXodimlarKorish"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_korish" />
+
+            <ImageView
+                android:id="@+id/imgXodimlarTahrirlash"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_tahrirlash" />
+
+            <ImageView
+                android:id="@+id/imgXodimlarOchirish"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_ochirish" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -32,17 +32,6 @@
                         android:layout_height="match_parent"
                         android:padding="6dp">
 
-                        <Button
-                            android:id="@+id/btn_qoshish"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/blue"
-                            android:drawableLeft="@drawable/ic_add"
-                            android:text="Qo'shish"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
                         <Spinner
                             android:id="@+id/row_number_spinner"
                             android:layout_width="wrap_content"
@@ -50,9 +39,9 @@
                             android:layout_marginStart="6dp"
                             android:background="@drawable/search_edittext_style"
                             android:padding="5dp"
-                            app:layout_constraintBottom_toBottomOf="@id/btn_qoshish"
-                            app:layout_constraintStart_toEndOf="@id/btn_qoshish"
-                            app:layout_constraintTop_toTopOf="@id/btn_qoshish" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                             android:id="@+id/searchSpinner"
@@ -66,6 +55,18 @@
                             app:layout_constraintBottom_toBottomOf="@id/row_number_spinner"
                             app:layout_constraintStart_toEndOf="@id/row_number_spinner"
                             app:layout_constraintTop_toTopOf="@id/row_number_spinner" />
+
+                        <Button
+                            android:id="@+id/btn_qoshish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:backgroundTint="@color/blue"
+                            android:drawableLeft="@drawable/ic_add"
+                            android:text="Qo'shish"
+                            app:layout_constraintBottom_toBottomOf="@id/searchSpinner"
+                            app:layout_constraintStart_toEndOf="@id/searchSpinner"
+                            app:layout_constraintTop_toTopOf="@id/searchSpinner" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -83,13 +84,15 @@
                         android:layout_height="wrap_content"
                         android:padding="6dp">
 
-                        <ImageButton
-                            android:id="@+id/btn_calendar"
-                            android:layout_width="40dp"
+                        <TextView
+                            android:id="@+id/txt_calendarView"
+                            android:layout_width="160dp"
                             android:layout_height="40dp"
-                            android:background="@color/background"
-                            android:src="@drawable/ic_baseline_calendar_today_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:background="@drawable/table_style_rows_toq"
+                            android:gravity="center"
+                            android:text="29.08.2021"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,42 +102,31 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="4dp"
                             android:background="@drawable/ic_x"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/btn_calendar"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/txt_calendarView"
-                            android:layout_width="160dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="10dp"
-                            android:background="@drawable/table_style_rows"
-                            android:gravity="center"
-                            android:text="29.08.2021"
-                            android:textColor="@color/white"
-                            android:textSize="12sp"
-                            app:layout_constraintStart_toEndOf="@id/btn_default"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintBottom_toBottomOf="@id/txt_calendarView"
+                            app:layout_constraintStart_toEndOf="@id/txt_calendarView"
+                            app:layout_constraintTop_toTopOf="@id/txt_calendarView" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     app:cardBackgroundColor="@color/card_background"
                     app:layout_constraintTop_toBottomOf="@id/seconCarView">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerview"
-                            tools:listitem="@layout/klient_recycler_item"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/kassa_rec_item" />
+                    </HorizontalScrollView>
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

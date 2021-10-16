@@ -1,32 +1,69 @@
 package com.example.shakar_biznes_loyiha.ui.sotilgan_yuklar
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.example.shakar_biznes_loyiha.R
+import com.example.shakar_biznes_loyiha.repository.Repository
+import com.example.shakar_biznes_loyiha.adapters.BaseFragment
+import com.example.shakar_biznes_loyiha.adapters.OlinganYuklarRecAdapter
+import com.example.shakar_biznes_loyiha.databinding.SotilganYuklarFragmentBinding
+import com.example.shakar_biznes_loyiha.model.RecOlinganYuk
 
-class SotilganYuklarFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SotilganYuklarFragment()
-    }
-
-    private lateinit var viewModel: SotilganYuklarViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.sotilgan_yuklar_fragment, container, false)
-    }
+class SotilganYuklarFragment :
+    BaseFragment<SotilganYuklarViewModel, SotilganYuklarFragmentBinding, Repository>() {
+    val adapterRec by lazy { OlinganYuklarRecAdapter() }
+    private val spinnerArray = arrayOf("20", "50", "100", "200", "500", "1000", "barchasi")
+    private val spinnerArrayCity = arrayOf("---", "Angren", "Rossiya", "Xorazm")
+    val spinnerKlient =
+        arrayOf("barchasi", "Abdulloh", "Salohiddin", "Eshonali", "AbuBakr", "G'ulom", "Tohir")
+    val arrayRec = arrayListOf<RecOlinganYuk>(
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000),
+        RecOlinganYuk("Adham", "Xorazm", "2021.10.10", "10 tonna", 9500, 17000000)
+    )
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SotilganYuklarViewModel::class.java)
-        // TODO: Use the ViewModel
+        val adapter = ArrayAdapter(requireContext(), R.layout.spinner_item, spinnerArray)
+        binding.rowNumberSpinner.adapter = adapter
+
+        val adapterCity = ArrayAdapter(requireContext(), R.layout.spinner_item, spinnerArrayCity)
+        binding.citySpinner.adapter = adapterCity
+
+        val adapterName = ArrayAdapter(requireContext(), R.layout.spinner_item, spinnerKlient)
+        binding.searchSpinner.adapter = adapterName
+        adapterRec.setDataList(arrayRec)
+        binding.recyclerview.adapter = adapterRec
+
     }
+
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): SotilganYuklarFragmentBinding =
+        SotilganYuklarFragmentBinding.inflate(inflater, container, false)
+
+    override fun getViewModel(): Class<SotilganYuklarViewModel> =
+        SotilganYuklarViewModel::class.java
+
+    override fun getFragmentRepository(): Repository = Repository()
 
 }

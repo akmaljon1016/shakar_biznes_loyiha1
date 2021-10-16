@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btnKorish"
+        android:icon="@drawable/ic_korish"
+        android:title="Ko'rish" />
+    <item
+        android:id="@+id/btnTahrirlash"
+        android:icon="@drawable/ic_tahrirlash"
+        android:title="Tahrirlash" />
+    <item
+        android:id="@+id/btnPulOldiBerdi"
+        android:icon="@drawable/ic_puloldiberdi"
+        android:title="Pul oldi-berdilar" />
+    <item
+        android:id="@+id/btnPulBerish"
+        android:icon="@drawable/ic_yuk_chiqarish"
+        android:title="Pul berish" />
+    <item
+        android:id="@+id/btnPulOlish"
+        android:icon="@drawable/ic_yuk_olish"
+        android:title="Pul olish" />
+    <item
+        android:id="@+id/btnYukOldiBerdi"
+        android:icon="@drawable/ic_yukoldiberdilar"
+        android:title="Yuk oldi-berdilar" />
+    <item
+        android:id="@+id/btnYukOlish"
+        android:icon="@drawable/ic_yukolish"
+        android:title="Yuk olish" />
+    <item
+        android:id="@+id/btnYukSotish"
+        android:icon="@drawable/ic_yuksotish"
+        android:title="Yuk Sotish" />
+</menu>

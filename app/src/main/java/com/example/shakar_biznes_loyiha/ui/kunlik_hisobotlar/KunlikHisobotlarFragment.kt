@@ -13,34 +13,71 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
-import com.example.shakar_biznes_loyiha.R
+import com.example.shakar_biznes_loyiha.repository.Repository
+import com.example.shakar_biznes_loyiha.adapters.BaseFragment
+import com.example.shakar_biznes_loyiha.adapters.BoshSahifaAdapter
 import com.example.shakar_biznes_loyiha.databinding.FragmentKunlikHisobotlarBinding
+import com.example.shakar_biznes_loyiha.model.RecBoshSohifa
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.util.*
 
 
-class KunlikHisobotlarFragment : Fragment() {
-
-    private var _binding: FragmentKunlikHisobotlarBinding? = null
-    val binding get() = _binding!!
+class KunlikHisobotlarFragment :
+    BaseFragment<KunlikHisobotlarViewModel, FragmentKunlikHisobotlarBinding, Repository>() {
 
     var datePicker: DatePicker? = null
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentKunlikHisobotlarBinding.inflate(inflater)
-        datePicker = view?.findViewById(R.id.txt_calendarView)
-        binding.btnCalendar.setOnClickListener {
+    private val adapter by lazy { BoshSahifaAdapter(requireActivity()) }
+    val boshSahifaItem = arrayListOf<RecBoshSohifa>(
+        RecBoshSohifa("Akmaljon", 1221212121),
+        RecBoshSohifa("Sobirjon", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121),
+    )
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.txtCalendarView.setOnClickListener {
             val fragment: DialogFragment = CustomDatePickerFragment()
             fragment.show(requireFragmentManager(), "DatePicker")
         }
-        return binding.root
+        adapter.setDataList(boshSahifaItem)
+        binding.recyclerview.adapter = adapter
+        CoroutineScope(Dispatchers.Main).launch {
+            binding.nestedScrollView.scrollTo(0,-2000)
+        }
     }
 
-    class CustomDatePickerFragment : DialogFragment(),DatePickerDialog.OnDateSetListener {
 
+    class CustomDatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
         override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
             val calendar: Calendar = Calendar.getInstance()
             val year = calendar.get(Calendar.YEAR)
@@ -75,4 +112,15 @@ class KunlikHisobotlarFragment : Fragment() {
 
         }
     }
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentKunlikHisobotlarBinding =
+        FragmentKunlikHisobotlarBinding.inflate(inflater, container, false)
+
+    override fun getViewModel(): Class<KunlikHisobotlarViewModel> =
+        KunlikHisobotlarViewModel::class.java
+
+    override fun getFragmentRepository(): Repository = Repository()
 }
