@@ -76,9 +76,23 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu/home.xml" value="0.17657657657657658" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu/pup_up_menu.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Shakar_biznes_loyiha/app/src/main/res/menu/toolbar_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/bosh_sahifa_items.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/fragment_blank.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/fragment_boshsahifa.xml" value="0.18" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/fragment_klientlar.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/fragment_kunlik_hisobotlar.xml" value="0.20803295571575695" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/klient_recycler_item.xml" value="0.18703703703703703" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/nav_header_home.xml" value="0.125" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/olingan_yuklar_fragment.xml" value="0.18703703703703703" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/sklad_rec_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/shakar_biznes_loyiha1/app/src/main/res/layout/skladdagi_qoldiq_rec_item.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

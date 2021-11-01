@@ -13,7 +13,7 @@ import com.example.shakar_biznes_loyiha.databinding.XodimQoshishFragmentBinding
 import com.google.android.material.slider.Slider
 
 class XodimQoshishFragment :
-    BaseFragment<XodimQoshishViewModel, XodimQoshishFragmentBinding, Repository>() {
+    BaseFragment<XodimQoshishFragmentBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,10 +38,4 @@ class XodimQoshishFragment :
         inflater: LayoutInflater,
         container: ViewGroup?
     ): XodimQoshishFragmentBinding = XodimQoshishFragmentBinding.inflate(inflater, container, false)
-
-    override fun getViewModel(): Class<XodimQoshishViewModel> = XodimQoshishViewModel::class.java
-
-    override fun getFragmentRepository(): Repository = Repository()
-
-
 }

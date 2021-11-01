@@ -10,21 +10,19 @@
 
         <TextView
             android:id="@+id/order_number"
-            android:layout_width="0dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:background="@color/background"
+            android:background="@drawable/table_style_header"
             android:padding="6dp"
-            android:text="1"
+            android:text="#"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:background="@color/background"
+            android:background="@drawable/table_style_header"
             android:padding="6dp"
             android:text="Ism"
             android:textColor="@color/white"
@@ -32,10 +30,9 @@
 
         <TextView
             android:id="@+id/summa"
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:background="@color/background"
+            android:background="@drawable/table_style_header"
             android:padding="6dp"
             android:text="Summa"
             android:textColor="@color/white"

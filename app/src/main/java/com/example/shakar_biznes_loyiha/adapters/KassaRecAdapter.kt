@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shakar_biznes_loyiha.R
+import com.example.shakar_biznes_loyiha.databinding.KassaRecItemBinding
 import com.example.shakar_biznes_loyiha.model.RecKassa
 import kotlinx.android.synthetic.main.kassa_rec_item.view.*
 import kotlin.math.sin
@@ -13,19 +14,16 @@ class KassaRecAdapter : RecyclerView.Adapter<KassaRecAdapter.MyViewHolder>() {
 
     var list = emptyList<RecKassa>()
 
-    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        companion object {
-            fun from(parent: ViewGroup): MyViewHolder {
-                val layout = LayoutInflater.from(parent.context)
-                val layoutInflater = layout.inflate(R.layout.kassa_rec_item, parent, false)
-                return MyViewHolder(layoutInflater)
-            }
-        }
-    }
+    class MyViewHolder(binding: KassaRecItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder =
-        MyViewHolder.from(parent)
+        MyViewHolder(
+            KassaRecItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val rowPosition = holder.adapterPosition

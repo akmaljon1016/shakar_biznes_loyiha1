@@ -12,7 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
+import com.example.shakar_biznes_loyiha.R
 import com.example.shakar_biznes_loyiha.repository.Repository
 import com.example.shakar_biznes_loyiha.adapters.BaseFragment
 import com.example.shakar_biznes_loyiha.adapters.BoshSahifaAdapter
@@ -25,9 +27,10 @@ import java.util.*
 
 
 class KunlikHisobotlarFragment :
-    BaseFragment<KunlikHisobotlarViewModel, FragmentKunlikHisobotlarBinding, Repository>() {
+    BaseFragment<FragmentKunlikHisobotlarBinding>() {
 
     var datePicker: DatePicker? = null
+    val myCalendar: Calendar = Calendar.getInstance()
     private val adapter by lazy { BoshSahifaAdapter(requireActivity()) }
     val boshSahifaItem = arrayListOf<RecBoshSohifa>(
         RecBoshSohifa("Akmaljon", 1221212121),
@@ -38,44 +41,37 @@ class KunlikHisobotlarFragment :
         RecBoshSohifa("Azamat", 1221212121),
         RecBoshSohifa("Azamat", 1221212121),
         RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
-        RecBoshSohifa("Azamat", 1221212121),
+        RecBoshSohifa("Azamat", 1221212121)
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.txtCalendarView.setOnClickListener {
-            val fragment: DialogFragment = CustomDatePickerFragment()
-            fragment.show(requireFragmentManager(), "DatePicker")
+//            val fragment: DialogFragment = CustomDatePickerFragment()
+//            fragment.show(requireFragmentManager(), "DatePicker")
+            val datePickerDialog: DatePickerDialog = DatePickerDialog(
+                requireActivity(),
+                R.style.DialogTheme,
+                date,
+                myCalendar.get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH)
+            )
+            datePickerDialog.show()
         }
-        adapter.setDataList(boshSahifaItem)
+        //adapter.setDataList(boshSahifaItem)
         binding.recyclerview.adapter = adapter
         CoroutineScope(Dispatchers.Main).launch {
-            binding.nestedScrollView.scrollTo(0,-2000)
+            binding.nestedScrollView.scrollTo(0, -2000)
         }
     }
 
+    val date: DatePickerDialog.OnDateSetListener = object : DatePickerDialog.OnDateSetListener {
+        override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
+            binding.txtCalendarView.text = "${day}.${month}.${year}"
+        }
+
+    }
 
     class CustomDatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
         override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -109,7 +105,7 @@ class KunlikHisobotlarFragment :
         }
 
         override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int) {
-
+            Toast.makeText(requireContext(), p1.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -118,9 +114,4 @@ class KunlikHisobotlarFragment :
         container: ViewGroup?
     ): FragmentKunlikHisobotlarBinding =
         FragmentKunlikHisobotlarBinding.inflate(inflater, container, false)
-
-    override fun getViewModel(): Class<KunlikHisobotlarViewModel> =
-        KunlikHisobotlarViewModel::class.java
-
-    override fun getFragmentRepository(): Repository = Repository()
 }

@@ -1,6 +1,5 @@
 package com.example.shakar_biznes_loyiha.adapters
 
-import com.example.shakar_biznes_loyiha.utils.Resources
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -8,24 +7,26 @@ import retrofit2.HttpException
 abstract class BaseRepository {
     suspend fun <T> safeApiCall(
         apiCall: suspend () -> T
-    ): Resources<T> {
+    ): com.example.shakar_biznes_loyiha.data.network.Resources<T> {
         return withContext(Dispatchers.IO) {
             try {
-                Resources.Success(apiCall.invoke())
+                com.example.shakar_biznes_loyiha.data.network.Resources.Success(apiCall.invoke())
             } catch (throwable: Throwable) {
                 when (throwable) {
                     is HttpException -> {
-                        Resources.Failure(
+                        com.example.shakar_biznes_loyiha.data.network.Resources.Failure(
                             false,
                             throwable.code(),
                             throwable.response()?.errorBody()
                         )
                     }
                     else -> {
-                        Resources.Failure(true, null, null)
+                        com.example.shakar_biznes_loyiha.data.network.Resources.Failure(true, null, null)
                     }
                 }
             }
         }
     }
+
+
 }

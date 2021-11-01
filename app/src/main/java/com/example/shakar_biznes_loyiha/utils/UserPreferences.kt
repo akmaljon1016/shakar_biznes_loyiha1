@@ -13,14 +13,4 @@ class UserPreferences(context: Context) {
     private val dataSore: DataStore<Preferences> = applicationContext.createDataStore(
         name = Constans.DATASTORE_NAME
     )
-    val isUserLOgged: Flow<Boolean?>
-        get() = dataSore.data.map {
-            it[Constans.USERLOGGED]
-        }
-
-    suspend fun saveIsUserLoggedOrNot(userStatus: Boolean) {
-        dataSore.edit {
-            it[Constans.USERLOGGED] = userStatus
-        }
-    }
 }

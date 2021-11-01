@@ -1,9 +1,12 @@
 package com.example.shakar_biznes_loyiha
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.view.Menu
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,24 +16,31 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.shakar_biznes_loyiha.databinding.ActivityHomeBinding
+import com.example.shakar_biznes_loyiha.utils.Constans
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-class HomeActivity: AppCompatActivity() {
+@AndroidEntryPoint
+class HomeActivity : AppCompatActivity() {
     private var isPressed: Boolean = false
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
-
+    lateinit var sharedPreferences: SharedPreferences
+    var nameOfUser = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        sharedPreferences = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        nameOfUser = sharedPreferences.getString("nameOfUser", "null").toString()
+        Toast.makeText(this, Constans.token, Toast.LENGTH_SHORT).show()
         setSupportActionBar(binding.appBarHome.toolbar)
-
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
+        val header = navView.getHeaderView(0)
+        val txtNameOfUser = header.findViewById<TextView>(R.id.nameOfUser)
+        txtNameOfUser.text=nameOfUser.toString()
         navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         // Passing each menu ID as a set of Ids because each
@@ -73,7 +83,6 @@ class HomeActivity: AppCompatActivity() {
             try {
                 startActivity(intent)
             } catch (e: Exception) {
-
             }
         } else {
             Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show()

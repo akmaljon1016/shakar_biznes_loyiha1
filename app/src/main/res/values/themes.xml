@@ -38,5 +38,7 @@
     <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark">
         <item name="android:popupBackground">@color/background</item>
     </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
 
+    </style>
 </resources>

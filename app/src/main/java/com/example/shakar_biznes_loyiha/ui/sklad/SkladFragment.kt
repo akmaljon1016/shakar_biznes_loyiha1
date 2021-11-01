@@ -12,28 +12,11 @@ import com.example.shakar_biznes_loyiha.adapters.SkladRecAdapter
 import com.example.shakar_biznes_loyiha.databinding.SkladFragmentBinding
 import com.example.shakar_biznes_loyiha.model.SkladRec
 
-class SkladFragment : BaseFragment<SkladViewModel, SkladFragmentBinding, Repository>() {
+class SkladFragment : BaseFragment<SkladFragmentBinding>() {
     val spinnerArray = arrayOf("20", "50", "100", "200", "500", "1000", "barchasi")
 
     val arrayRec = arrayListOf<SkladRec>(
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
-        SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
+
         SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
         SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21),
         SkladRec("xorazm", 12, 15000.0, 3400000.0, 323, 45, 21)
@@ -53,9 +36,4 @@ class SkladFragment : BaseFragment<SkladViewModel, SkladFragmentBinding, Reposit
         inflater: LayoutInflater,
         container: ViewGroup?
     ): SkladFragmentBinding = SkladFragmentBinding.inflate(inflater, container, false)
-
-    override fun getViewModel(): Class<SkladViewModel> = SkladViewModel::class.java
-
-    override fun getFragmentRepository(): Repository = Repository()
-
 }

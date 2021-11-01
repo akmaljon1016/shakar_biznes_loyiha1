@@ -12,7 +12,7 @@ import com.example.shakar_biznes_loyiha.adapters.KassaRecAdapter
 import com.example.shakar_biznes_loyiha.databinding.KassaFragmentBinding
 import com.example.shakar_biznes_loyiha.model.RecKassa
 
-class KassaFragment : BaseFragment<KassaViewModel, KassaFragmentBinding, Repository>() {
+class KassaFragment : BaseFragment<KassaFragmentBinding>() {
 
     val kassaRecAdapter by lazy { KassaRecAdapter() }
 
@@ -20,23 +20,6 @@ class KassaFragment : BaseFragment<KassaViewModel, KassaFragmentBinding, Reposit
     val spinnerArray1 =
         arrayOf("barchasi", "Abdulloh", "Salohiddin", "Eshonali", "AbuBakr", "G'ulom", "Tohir")
     val recArray= arrayListOf<RecKassa>(
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
-        RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
         RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0),
         RecKassa("Akmaljon","Xorazm","12.3.2012",300000,12,10000,20000000.0,1212121212.0,230.0)
     )
@@ -55,6 +38,4 @@ class KassaFragment : BaseFragment<KassaViewModel, KassaFragmentBinding, Reposit
         inflater: LayoutInflater,
         container: ViewGroup?
     ): KassaFragmentBinding = KassaFragmentBinding.inflate(inflater, container, false)
-    override fun getViewModel(): Class<KassaViewModel> = KassaViewModel::class.java
-    override fun getFragmentRepository(): Repository = Repository()
 }

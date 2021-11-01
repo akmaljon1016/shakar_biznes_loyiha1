@@ -14,20 +14,10 @@ import com.example.shakar_biznes_loyiha.databinding.FoydalanuvchilarFragmentBind
 import com.example.shakar_biznes_loyiha.model.RecXodimlar
 
 class FoydalanuvchilarFragment :
-    BaseFragment<FoydalanuvchilarViewModel, FoydalanuvchilarFragmentBinding, Repository>() {
+    BaseFragment<FoydalanuvchilarFragmentBinding>() {
     val adapterRec by lazy { XodimlarRecAdapter() }
     val arrayRec = arrayListOf<RecXodimlar>(
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
-        RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
+
         RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
         RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
         RecXodimlar("anvar", "anvar", "G'aniyev", "faol", "2021.03.24"),
@@ -56,9 +46,4 @@ class FoydalanuvchilarFragment :
         container: ViewGroup?
     ): FoydalanuvchilarFragmentBinding =
         FoydalanuvchilarFragmentBinding.inflate(inflater, container, false)
-
-    override fun getViewModel(): Class<FoydalanuvchilarViewModel> =
-        FoydalanuvchilarViewModel::class.java
-
-    override fun getFragmentRepository(): Repository = Repository()
 }

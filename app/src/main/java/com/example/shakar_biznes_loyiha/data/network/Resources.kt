@@ -1,4 +1,4 @@
-package com.example.shakar_biznes_loyiha.utils
+package com.example.shakar_biznes_loyiha.data.network
 
 import okhttp3.ResponseBody
 
