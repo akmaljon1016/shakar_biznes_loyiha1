@@ -1,8 +1,11 @@
 package com.example.shakar_biznes_loyiha.models.klient
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Item(
     @SerializedName("boshlangich_hisob")
     var boshlangichHisob: Int,
@@ -20,4 +23,4 @@ data class Item(
     var yakuniyHisob: Int,
     @SerializedName("yuk_oldi_berdi")
     var yukOldiBerdi: Int
-)
+) : Parcelable

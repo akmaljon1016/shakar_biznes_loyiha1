@@ -17,19 +17,18 @@ import kotlinx.android.synthetic.main.klient_recycler_item.view.*
 
 class KlientlarPagerAdapter(val context: Context) :
     PagingDataAdapter<Item, KlientlarPagerAdapter.MyViewHolder>(diffCallback) {
+    var listener: onKlientItemClickListener? = null
+
     inner class MyViewHolder(binding: KlientRecyclerItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        tableColor(holder,position)
+        tableColor(holder, position)
         val rowPosition = holder.adapterPosition
         holder.itemView.actionLayout.setOnClickListener {
             //listener?.onClickItemListener(list[rowPosition - 1])
             Toast.makeText(context, rowPosition.toString(), Toast.LENGTH_SHORT).show()
-            popupMenus(it)
-            holder.itemView.setOnClickListener {
-
-            }
+            popupMenus(it, position)
         }
     }
 
@@ -52,18 +51,17 @@ class KlientlarPagerAdapter(val context: Context) :
             override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 
-    fun popupMenus(v: View) {
+    fun popupMenus(v: View, position: Int) {
         val ctw: ContextThemeWrapper = ContextThemeWrapper(context, R.style.CustomPopupTheme)
         val popupMenus = PopupMenu(ctw, v)
         popupMenus.inflate(R.menu.pup_up_menu)
         popupMenus.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.btnKorish -> {
-                    Toast.makeText(context, "ko'rish", Toast.LENGTH_SHORT).show()
+                    listener?.onItemClick(getItem(position))
                     true
                 }
                 R.id.btnTahrirlash -> {
@@ -86,49 +84,39 @@ class KlientlarPagerAdapter(val context: Context) :
     fun tableColor(holder: MyViewHolder, position: Int) {
 
         val rowPosition = holder.bindingAdapterPosition
-        if (rowPosition == 0) {
-            holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.txtKlientIsm.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.txtKlientYakuniyXisob.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.txtKlientPulOldiBerdi.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.txtKlientYukOldiBerdi.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.txtKlientZavod.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.actionLayout.setBackgroundResource(R.drawable.table_style_header)
-            holder.itemView.img_down.visibility = View.INVISIBLE
-            holder.itemView.txtKlientOrderNumber.text = "#"
-            holder.itemView.txtKlientIsm.text = "Ism"
-            holder.itemView.txtKlientYakuniyXisob.text = "Xisob"
-            holder.itemView.txtKlientPulOldiBerdi.text = "Pul oldi berdi"
-            holder.itemView.txtKlientYukOldiBerdi.text = "Yuk oldi berdi"
-            holder.itemView.txtKlientZavod.text = "Zavod"
-            holder.itemView.txtKlientAction.text = "Actions"
+        val currentItem = getItem(position)
+        if (rowPosition % 2 == 0) {
+            holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.txtKlientIsm.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.txtKlientYakuniyXisob.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.txtKlientPulOldiBerdi.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.txtKlientYukOldiBerdi.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.txtKlientZavod.setBackgroundResource(R.drawable.table_style_row_juft)
+            holder.itemView.actionLayout.setBackgroundResource(R.drawable.table_style_row_juft)
         } else {
-            val currentItem = getItem(position - 1)
-            if (rowPosition % 2 == 0) {
-                holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.txtKlientIsm.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.txtKlientYakuniyXisob.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.txtKlientPulOldiBerdi.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.txtKlientYukOldiBerdi.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.txtKlientZavod.setBackgroundResource(R.drawable.table_style_row_juft)
-                holder.itemView.actionLayout.setBackgroundResource(R.drawable.table_style_row_juft)
-            } else {
-                holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientIsm.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientYakuniyXisob.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientPulOldiBerdi.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientYukOldiBerdi.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.txtKlientZavod.setBackgroundResource(R.drawable.table_style_rows_toq)
-                holder.itemView.actionLayout.setBackgroundResource(R.drawable.table_style_rows_toq)
-            }
-            holder.itemView.txtKlientOrderNumber.text = rowPosition.toString()
-            holder.itemView.txtKlientIsm.text = currentItem?.name
-            holder.itemView.txtKlientYakuniyXisob.text = currentItem?.yakuniyHisob.toString()
-            holder.itemView.txtKlientPulOldiBerdi.text = currentItem?.pulOldiBerdi.toString()
-            holder.itemView.txtKlientYukOldiBerdi.text = currentItem?.yukOldiBerdi.toString()
-            holder.itemView.txtKlientZavod.text = currentItem?.typeName
-            holder.itemView.txtKlientAction.text = "Actions"
+            holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientIsm.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientOrderNumber.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientYakuniyXisob.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientPulOldiBerdi.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientYukOldiBerdi.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.txtKlientZavod.setBackgroundResource(R.drawable.table_style_rows_toq)
+            holder.itemView.actionLayout.setBackgroundResource(R.drawable.table_style_rows_toq)
         }
+        holder.itemView.txtKlientOrderNumber.text = (rowPosition + 1).toString()
+        holder.itemView.txtKlientIsm.text = currentItem?.name
+        holder.itemView.txtKlientYakuniyXisob.text = currentItem?.yakuniyHisob.toString()
+        holder.itemView.txtKlientPulOldiBerdi.text = currentItem?.pulOldiBerdi.toString()
+        holder.itemView.txtKlientYukOldiBerdi.text = currentItem?.yukOldiBerdi.toString()
+        holder.itemView.txtKlientZavod.text = currentItem?.typeName
+        holder.itemView.txtKlientAction.text = "Actions"
+    }
+
+    interface onKlientItemClickListener {
+        fun onItemClick(klient: Item?)
+    }
+
+    fun setOnKlientItemClickListener(listener: onKlientItemClickListener) {
+        this.listener=listener
     }
 }

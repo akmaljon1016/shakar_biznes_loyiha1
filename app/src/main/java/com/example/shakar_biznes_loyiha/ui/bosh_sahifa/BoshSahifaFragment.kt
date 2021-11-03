@@ -6,9 +6,11 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.SearchView
@@ -24,11 +26,8 @@ import com.example.shakar_biznes_loyiha.models.boshSahifa.Client
 import com.example.shakar_biznes_loyiha.utils.NetworkListener
 import com.example.shakar_biznes_loyiha.utils.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 
 @AndroidEntryPoint
@@ -59,6 +58,10 @@ class BoshSahifaFragment :
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(1)
+            binding.nestedScrollView.fullScroll(ScrollView.FOCUS_UP)
+        }
         binding.swipeToRefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
                 if (hasInternetConnection()) {
@@ -119,9 +122,7 @@ class BoshSahifaFragment :
         binding.recSkladdagiQoldiq.adapter = adapterSklad
         binding.searchview.setOnQueryTextListener(this)
 
-        CoroutineScope(Dispatchers.Main).launch {
-            binding.nestedScrollView.scrollTo(0, -2000)
-        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -151,7 +152,10 @@ class BoshSahifaFragment :
                 binding.txtKassaDollor.text = it.data!!.data.kassa.kassaDollar.toString()
                 binding.txtBank.text = it.data!!.data.kassa.kassaBank.toString()
                 boshSahifaDataList = it.data.data.clients as ArrayList<Client>
+                filteredList.clear()
                 filteredList.addAll(boshSahifaDataList)
+                binding.nestedScrollView.fullScroll(ScrollView.FOCUS_UP)
+
 //                Log.d("CURRENT",filter("Zavod").toString())
             })
         }
@@ -172,6 +176,13 @@ class BoshSahifaFragment :
             }
             if (p2 == 1) {
                 adapterBosh.setDataList(sortListWithNameAsc(filteredList))
+                for (item in filteredList) {
+                    Log.d("FILTER", item.name)
+                }
+                Log.d("FILTER", "------------------------")
+                for (item in sortListWithNameAsc(filteredList)) {
+                    Log.d("FILTER", item.name)
+                }
                 adapterBosh.notifyDataSetChanged()
                 binding.recBoshSahifa.layoutManager?.scrollToPosition(0)
             }
@@ -203,23 +214,10 @@ class BoshSahifaFragment :
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-      searchviewFilter(newText.toString())
+        searchviewFilter(newText.toString())
         return false
     }
 
-//    private fun filter(newText: String?) {
-//        val fiteredList = arrayListOf<RecBoshSohifa>()
-//        for (item in ) {
-//            if (item.name.lowercase().contains(newText!!.lowercase())) {
-//                fiteredList.add(item)
-//            }
-//            if (fiteredList.isEmpty()) {
-//                // Toast.makeText(requireContext(), "No data found", Toast.LENGTH_SHORT).show()
-//            } else {
-//                adapterBosh.setDataList(fiteredList)
-//            }
-//        }
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.toolbar_menu, menu)
@@ -264,6 +262,7 @@ class BoshSahifaFragment :
         filteredList.clear()
         if (data == "Barchasi") {
             filteredList.addAll(boshSahifaDataList)
+            // filteredList=boshSahifaDataList
         } else {
             for (item in boshSahifaDataList) {
                 if (item.typeName.equals(data)) {
@@ -275,9 +274,13 @@ class BoshSahifaFragment :
     }
 
     fun sortListWithNameAsc(list: List<Client>): List<Client> {
-        var sortedList = list.sortedWith(compareBy {
+//        var sortedList = list.sortedWith(compareBy {
+//            it.name
+//        })
+//        return sortedList
+        var sortedList=list.sortedBy {
             it.name
-        })
+        }
         return sortedList
     }
 

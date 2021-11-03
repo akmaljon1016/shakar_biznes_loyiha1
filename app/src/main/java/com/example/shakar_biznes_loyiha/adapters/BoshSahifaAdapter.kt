@@ -33,7 +33,7 @@ class BoshSahifaAdapter(val context: Context) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val rowPosition = holder.adapterPosition
-
+        holder.setIsRecyclable(false)
         val singleItems = list[rowPosition]
         if (rowPosition % 2 == 0) {
             holder.itemView.order_number.setBackgroundResource(R.drawable.table_style_row_juft)
@@ -60,5 +60,6 @@ class BoshSahifaAdapter(val context: Context) :
         val diffUtilResult = DiffUtil.calculateDiff(genericDiffUtil)
         list = newDataList
         diffUtilResult.dispatchUpdatesTo(this)
+        notifyDataSetChanged()
     }
 }

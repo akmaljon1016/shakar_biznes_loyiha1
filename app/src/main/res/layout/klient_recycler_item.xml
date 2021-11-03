@@ -14,6 +14,7 @@
             android:id="@+id/txtKlientOrderNumber"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="N"
             android:textColor="@color/white"
@@ -23,6 +24,7 @@
             android:id="@+id/txtKlientIsm"
             android:layout_width="100dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="Ismi"
             android:textColor="@color/white"
@@ -32,6 +34,7 @@
             android:id="@+id/txtKlientYakuniyXisob"
             android:layout_width="150dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="Yakuniy hisob"
             android:textColor="@color/white"
@@ -41,6 +44,7 @@
             android:id="@+id/txtKlientPulOldiBerdi"
             android:layout_width="150dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="Pul oldi-berdi"
             android:textColor="@color/white"
@@ -50,6 +54,7 @@
             android:id="@+id/txtKlientYukOldiBerdi"
             android:layout_width="150dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="Yuk oldi-berdi"
             android:textColor="@color/white"
@@ -59,6 +64,7 @@
             android:id="@+id/txtKlientZavod"
             android:layout_width="100dp"
             android:layout_height="30dp"
+            android:background="@drawable/table_style_header"
             android:padding="4dp"
             android:text="Zavod"
             android:textColor="@color/white"
@@ -67,13 +73,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/actionLayout"
             android:layout_width="120dp"
-            android:layout_height="30dp">
+            android:layout_height="30dp"
+            android:background="@drawable/table_style_header">
 
             <TextView
                 android:id="@+id/txtKlientAction"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:padding="4dp"
+                android:text="Actions"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +95,7 @@
                 android:layout_marginStart="5dp"
                 android:background="@drawable/ic_down"
                 app:layout_constraintBottom_toBottomOf="@id/txtKlientAction"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
